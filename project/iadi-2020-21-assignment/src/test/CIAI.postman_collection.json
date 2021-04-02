@@ -1,0 +1,1306 @@
+{
+	"info": {
+		"_postman_id": "be338566-5836-4d70-ac08-5a9401f424e4",
+		"name": "CIAI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Grant Calls",
+			"item": [
+				{
+					"name": "Get all Grants calls",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "2948fc02-152b-4ed5-8c6e-1315a4c0d6c3",
+								"exec": [
+									"pm.test(function() {\r",
+									"    pm.response.to.have.status(200);\r",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/grantcall",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"grantcall"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "[GrantCall] Create New",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "IPS",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "IPS",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"testeasgassgagsasga\",\r\n    \"description\":\"teste\",\r\n    \"requirements\":\"none\",\r\n    \"funding\":999,\r\n    \"openDate\":\"2018-09-04 10:44:46\",\r\n    \"closeDate\":\"2018-09-04 18:44:46\",\r\n    \"sponsorId\":1,\r\n    \"evalPanel\":10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/grantcall",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"grantcall"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get ONE Grant Call",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/grantcall/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"grantcall",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update GrantCall",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Bolsa FCT\",\r\n    \"description\": \"Bolsa maravilhosa para os alunos\",\r\n    \"requirements\": \"Média >= 18\",\r\n    \"funding\": 999,\r\n    \"openDate\": \"2018-10-23 12:03:10\",\r\n    \"closeDate\": \"2019-10-23 12:03:10\",\r\n    \"sponsorId\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/grantcall/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"grantcall",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Grant",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/grantcall/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"grantcall",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Grants Open at given date",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/grantcall/date?date=23.10.2022",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"grantcall",
+								"date"
+							],
+							"query": [
+								{
+									"key": "date",
+									"value": "23.10.2022"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Closed Grants",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/grantcall/closed",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"grantcall",
+								"closed"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Open Grants",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/grantcall/open",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"grantcall",
+								"open"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Evaluation Panel of grant",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Sponsors",
+			"item": [
+				{
+					"name": "Create Sponsor",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Seila\",\r\n    \"address\":\"Seila2\",\r\n    \"contact\":\"Seila3\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/sponsor/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"sponsor",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Sponsors",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "FCTT",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "FCT",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/sponsor",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"sponsor"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get sponsor grant calls",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/sponsor/1/grantcall",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"sponsor",
+								"1",
+								"grantcall"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get ONE Sponsor",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/sponsor/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"sponsor",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Sponsor",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"IPS\",\r\n    \"address\":\"Campus IPS\",\r\n    \"contact\":\"New@IPS\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/sponsor/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"sponsor",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete sponsor",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/sponsor/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"sponsor",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Data Items",
+			"item": [
+				{
+					"name": "Get all DataItems",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "FCT",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "FCT",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/grantcall/dataitems",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"grantcall",
+								"dataitems"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Grant DataItems",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/grantcall/3/dataitems",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"grantcall",
+								"3",
+								"dataitems"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add DataItem",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\r\n        \"dataType\": \"NovoDataType\",\r\n        \"mandatory\": true\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/grantcall/3/dataitems",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"grantcall",
+								"3",
+								"dataitems"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete DataItem",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/grantcall/3/dataitems/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"grantcall",
+								"3",
+								"dataitems",
+								"6"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Applications",
+			"item": [
+				{
+					"name": "New Application",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "FCT",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "FCT",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"studentId\":5,\r\n    \"grantId\":7,\r\n    \"application\": {\r\n        \"introduction\":\"Sei la\",\r\n        \"relatedWork\":\"Sei la\",\r\n        \"workPlan\":\"Sei la\",\r\n        \"publications\":\"Sei la\",\r\n        \"status\":\"open\"\r\n    },\r\n    \"dataItems\": [\r\n        {\r\n            \"appDataItemId\":1,\r\n            \"dataItemId\":8,\r\n            \"data\":\"\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/application",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"application"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Applications",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "FCT",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "FCT",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/application",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"application"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get application data items",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "FCT",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "FCT",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/application/9/dataitems",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"application",
+								"9",
+								"dataitems"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT Edit Application  Status",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "Rev1",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "Rev1",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\n        \"applicationId\": 17,\n        \"introduction\": \"Very good intro\",\n        \"relatedWork\": \"Field work\",\n        \"workPlan\": \"Sleep\",\n        \"publications\": \"none\",\n        \"status\": \"Waiting Response 3\"\n    }",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/application/18/status",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"application",
+								"18",
+								"status"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Reviewers",
+			"item": [
+				{
+					"name": "Get All Reviewers",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "FCT",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "FCT",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/reviewer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"reviewer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get A Reviewer",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/reviewer/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"reviewer",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add a Reviewer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/reviewer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"reviewer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Reviewer",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "FCT",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "FCT",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"reviewerId\": 3,\n    \"name\": \"joséééé\",\n    \"birthday\": \"birthday\",\n    \"email\": \"email@email.com\",\n    \"address\": \"Évora\",\n    \"telephone\": \"9677\",\n    \"city\": \"Évora\",\n    \"postcode\": \"7000\"\n}",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/reviewer/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"reviewer",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Reviewer",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "FCT",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "FCT",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/reviewer/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"reviewer",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Evaluation Panel",
+			"item": [
+				{
+					"name": "Get All Evaluation Panels",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "FCT",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "FCT",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/panel",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"panel"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Evaluation Panel",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "FCT",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "FCT",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"chair\" : {\n            \"reviewerId\": 3,\n            \"name\": \"josé\",\n            \"birthday\": \"birthday\",\n            \"email\": \"email@email.com\",\n            \"address\": \"Évora\",\n            \"telephone\": \"9677\",\n            \"city\": \"Évora\",\n            \"postcode\": \"7000\"\n        }\n}",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/panel",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"panel"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Evaluation Panel",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/panel",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"panel"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Evaluation Panel",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "FCT",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "FCT",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/panel/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"panel",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Panel Chair ",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "FCT",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "FCT",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/panel/4/chair",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"panel",
+								"4",
+								"chair"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Panel Chair",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "FCT",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "FCT",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\n        \"reviewerId\": 5,\n        \"name\": \"joséééé\",\n        \"birthday\": \"birthday\",\n        \"email\": \"email@email.com\",\n        \"address\": \"Évora\",\n        \"telephone\": \"9677\",\n        \"city\": \"Évora\",\n        \"postcode\": \"7000\"\n    }",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/panel/4/chair",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"panel",
+								"4",
+								"chair"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Member",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"reviewerId\": 9,\n        \"username\": \"Rev2\",\n        \"password\": \"$2a$10$IujMqUUSAsTVqNL72Souh.OJrEaAQU7XFdmYntXs8.Y5EbAEfdK/i\",\n        \"name\": \"Rev2\",\n        \"birthday\": \"11/03/1994\",\n        \"email\": \"rev2@revs.com\",\n        \"address\": \"address\",\n        \"telephone\": \"phone\",\n        \"city\": \"city\",\n        \"postcode\": \"postCode\",\n        \"institutionId\": 4\n    }",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/panel/10/members",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"panel",
+								"10",
+								"members"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Member",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "Rev1",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "Rev1",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/panel/10/members/9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"panel",
+								"10",
+								"members",
+								"9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Members",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/panel/10/members",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"panel",
+								"10",
+								"members"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Reviews",
+			"item": [
+				{
+					"name": "Get Reviews",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/review",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"review"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a Review",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/review",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"review"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add a Review",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "Rev1",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "Rev1",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "   {\n        \"grantReviewId\": 23,\n        \"writtenReview\": \"Esta aplicação é muito boa....\",\n        \"applicationId\": 17,\n        \"reviewerId\": 9,\n        \"evaluationPanelId\": 10\n    }",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/review",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"review"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

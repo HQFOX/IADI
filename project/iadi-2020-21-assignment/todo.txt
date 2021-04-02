@@ -1,0 +1,7 @@
+// TODO - Approve/Decline application proposal of student (MUST BE EVALUATION CHAIR OR ACCESS DENIED.)
+
+// TODO - Test reviewers can only add reviews to student application that doesnt belong to the same institution
+// TODO - Submit a application to a grant if all mandatory dataitems are filled
+
+// TODO - Test update student Mocking of that student -> Result: Success
+// TODO - Test Update student Mocking another student -> Result: fail
